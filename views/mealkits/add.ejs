@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title%></title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form method="post" action="/mealkits/add" enctype="multipart/form-data">
+        <h1>Add a New Mealkit</h1>
+        <label for="title"></label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          placeholder="Title"
+          value="<%= values.title%>"
+        /><br /><br />
+
+        <% if (validationMessages.title) { %>
+        <span style="color: red"> <%= validationMessages.title %></span><br />
+        <br />
+        <%}%>
+        <label for="includes"></label>
+        <input
+          type="text"
+          id="includes"
+          name="includes"
+          placeholder="Includes"
+          value="<%= values.includes%>"
+        /><br /><br />
+
+        <% if (validationMessages.includes) { %>
+        <span style="color: red"> <%= validationMessages.includes %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="description"></label>
+        <textarea
+          id="description"
+          name="description"
+          placeholder="description"
+          value="<%= values.description%>"
+        >
+        </textarea
+        ><br /><br />
+
+        <% if (validationMessages.description) { %>
+        <span style="color: red"> <%= validationMessages.description %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="category"></label>
+        <input
+          type="text"
+          id="category"
+          name="category"
+          placeholder="category"
+        /><br /><br />
+
+        <% if (validationMessages.category) { %>
+        <span style="color: red"> <%= validationMessages.category %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="price"></label>
+        <input
+          type="number"
+          id="price"
+          name="price"
+          placeholder="price"
+        /><br /><br />
+
+        <% if (validationMessages.price) { %>
+        <span style="color: red"> <%= validationMessages.price %></span><br />
+        <br />
+        <%}%>
+
+        <label for="cookingTime"></label>
+        <input
+          type="number"
+          id="cookingTime"
+          name="cookingTime"
+          placeholder="cookingTime"
+        /><br /><br />
+
+        <% if (validationMessages.cookingTime) { %>
+        <span style="color: red"> <%= validationMessages.cookingTime %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="servings"></label>
+        <input
+          type="number"
+          id="servings"
+          name="servings"
+          placeholder="servings"
+        /><br /><br />
+
+        <% if (validationMessages.servings) { %>
+        <span style="color: red"> <%= validationMessages.servings %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="imageUrl"> Add an Image</label>
+        <input type="file" id="imageUrl" name="imageUrl" /> <br />
+        <br />
+
+        <% if (validationMessages.imageUrl) { %>
+        <span style="color: red"> <%= validationMessages.imageUrl %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="featuredMealKit"> Featured Mealkit</label>
+        <input
+          type="checkbox"
+          id="featuredMealKit"
+          name="featuredMealKit"
+        /><br /><br />
+
+        <% if (validationMessages.featuredMealKit) { %>
+        <span style="color: red">
+          <%= validationMessages.featuredMealKit %></span
+        ><br />
+        <br />
+        <%}%>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

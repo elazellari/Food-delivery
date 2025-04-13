@@ -1,0 +1,18 @@
+<article class="card">
+  <header>
+    <h2><%= title %></h2>
+  </header>
+  <img src="<%= imageUrl %>" alt="Meal Picture" />
+  <div class="content">
+    <p><%= description %></p>
+  </div>
+  <p class="price"><%= price %>$</p>
+  <form action="/cart" method="POST">
+    <input type="hidden" name="mealKitId" value="<%= _id %>">
+    <% if (userLogin === "customer") { %>
+      <button type="submit">Add to Cart</button>
+    <% } %>
+  </form>
+</article>
+
+

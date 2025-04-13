@@ -1,0 +1,55 @@
+<div class="hero">
+  <img src="/images/hero-img.jpg" alt="Food Hero Image" />
+  <div class="top-left">
+    Best Food in Town
+    <p>Try our new delicious Sushi & Salmon Mix for only $34.99</p>
+  </div>
+  <button class="bottom-left">Order your bite now</button>
+</div>
+<div class="grid-container">
+  <div class="grid-item">
+    <img src="/images/grid1.jpg" alt="food menu" />
+    <h2>Check our Menu</h2>
+    <p>
+      Our Menu has a wide range of dishes that you can choose from. Italian,
+      Greek, Turkish, Mexican or Asian cuisine.
+    </p>
+  </div>
+  <div class="grid-item">
+    <img src="/images/grid2.jpg" alt="make order" />
+    <h2>Choose your favorite dish</h2>
+    <p>
+      Choose from the menu or prepare your own dish with your desired
+      ingredients.
+    </p>
+  </div>
+  <div class="grid-item">
+    <img src="/images/grid3.jpg" alt="checkout" />
+    <h2>Proceed to Checkout</h2>
+    <p>
+      Review your order and make sure you have everything you need before
+      payment confirmation.
+    </p>
+  </div>
+  <div class="grid-item">
+    <img src="/images/grid4.jpg" alt="delivery" />
+    <h2>Fast Delivery to your door</h2>
+    <p>
+      Experience our swift delivery service guaranteeing your favorite meals
+      arrive warm and ready for you to enjoy.
+    </p>
+  </div>
+</div>
+
+<% if (Array.isArray(mealkits)) { %>
+<div class="meal-card">
+  <% mealkits.forEach(mealkit => { %> <%- include('../partials/mealkit',
+  mealkit) %> <% }); %>
+</div>
+<% } else { %> <% Object.keys(mealkits).forEach(category => { %>
+<div class="meal-card">
+  <h1><%= category %></h1>
+  <% mealkits[category].forEach(mealkit => { %> <%-
+  include('../partials/mealkit', mealkit) %> <% }); %>
+</div>
+<% }); %> <% } %>

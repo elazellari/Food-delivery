@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%- title%></title>
+    </head>
+    <body>
+<div class="form-container">
+    <h1>Welcome back</h1>
+    <form method="post" action="/log-in"> 
+        <label for="email"></label>
+        <input type="text" id="email" name="email" placeholder="Email" value="<%= values.email%>"/><br/><br/>
+    
+        <% if (validationMessages.email) { %>
+            <span style="color: red"> <%= validationMessages.email %> </span><br/> <br/>
+            <%}%>
+
+        <label for="password"></label>
+        <input type="password" id="password" name="password" placeholder="Password"/><br/><br/>
+    
+        <% if (validationMessages.password) { %>
+            <span style="color: red"> <%= validationMessages.password %></span><br/> <br/>
+            <%}%>
+        <input type="submit" value="Submit">
+        <label for="clerk">Data Entry Clerk</label>
+        <input type="radio" id="clerk" name="userLogin" value="clerk" checked>
+        <label for="customer">Customer</label>
+        <input type="radio" id="customer" name="userLogin" value="customer"> 
+      
+    </form>
+    </div>
+    </body>
+</html>

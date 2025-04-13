@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%- title%></title>
+  </head>
+  <body>
+    <div class="form-container">
+      <form method="post" action="/sign-up">
+        <h1>Sign up</h1>
+        <label for="firstName"></label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          value="<%= values.firstName%>"
+        /><br /><br />
+
+        <% if (validationMessages.firstName) { %>
+        <span style="color: red"> <%= validationMessages.firstName %></span
+        ><br />
+        <br />
+        <%}%>
+        <label for="lastName"></label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          placeholder="Last Name"
+          value="<%= values.lastName%>"
+        /><br /><br />
+
+        <% if (validationMessages.lastName) { %>
+        <span style="color: red"> <%= validationMessages.lastName %></span
+        ><br />
+        <br />
+        <%}%>
+
+        <label for="email"></label>
+        <input
+          type="text"
+          id="email"
+          name="email"
+          placeholder="Email"
+          value="<%= values.email%>"
+        /><br /><br />
+
+        <% if (validationMessages.email) { %>
+        <span style="color: red"> <%= validationMessages.email %></span><br />
+        <br />
+        <%}%>
+
+        <label for="password"></label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+        /><br /><br />
+
+        <% if (validationMessages.password) { %>
+        <span style="color: red"> <%= validationMessages.password %></span
+        ><br />
+        <br />
+        <%}%>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

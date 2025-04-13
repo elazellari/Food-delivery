@@ -1,0 +1,24 @@
+
+    <head>
+        <title><%- title%></title>
+    </head>
+    <body>
+        
+        <% if (Array.isArray(mealkits)) { %>
+            <div class="meal-card">
+              <% mealkits.forEach(mealkit => { %>
+                <%- include('../partials/mealkit', mealkit) %>
+              <% }); %>
+            </div>
+          <% } else { %>
+            <% Object.keys(mealkits).forEach(category => { %>  
+              <div class="meal-card">
+                <h1><%= category %></h1>
+                <% mealkits[category].forEach(mealkit => { %>
+                  <%- include('../partials/mealkit', mealkit) %>
+                <% }); %>
+              </div>
+            <% }); %>
+          <% } %>
+       
+    </body>

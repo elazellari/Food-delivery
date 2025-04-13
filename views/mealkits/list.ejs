@@ -1,0 +1,23 @@
+ <head>
+        <title><%- title%></title>
+    </head>
+    <body>
+
+        <div class="welcome">
+       <h1>Welcome to Bite Rush, <%= user.firstName%></h1>
+       <a href="/load-data/mealkits">Load Data</a>
+       <button class="addButton" onclick="window.location.href='/mealkits/add'">Add</button>
+       <h1> Add,Remove or Modify Meal kits</h1>
+       <% if (mealkits && mealkits.length > 0) { %> 
+        <div class="meal-card">
+            <% mealkits.forEach(mealkit => { %>
+                <%- include('../partials/mealkit', mealkit) %>  
+                <button onclick="window.location.href='/mealkits/edit/<%= mealkit._id %>'">Edit</button>
+                <button onclick="window.location.href='/mealkits/remove/<%= mealkit._id %>'">Remove</button>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <h2>There are no meal kits to display</h2>
+    <% } %>
+        </div>    
+    </body>
